@@ -1,0 +1,9 @@
+node_modules
+
+.*
+!.gitignore
+!.rollup.js
+!.travis.yml
+*.log*
+
+index.dist.js*
