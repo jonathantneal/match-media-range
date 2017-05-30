@@ -1,9 +1,9 @@
 node_modules
-
 .*
+!.appveyor.yml
+!.editorconfig
 !.gitignore
 !.rollup.js
 !.travis.yml
 *.log*
-
-index.dist.js*
+match-media-range.es5.js*

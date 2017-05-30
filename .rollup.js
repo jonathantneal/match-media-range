@@ -1,15 +1,12 @@
 export default {
-	entry: 'index.js',
-	dest: 'index.dist.js',
-	sourceMap: 'index.dist.js.map',
-	moduleName: 'window.matchMedia',
+	entry: 'match-media-range.js',
+	dest: 'match-media-range.es5.js',
+	sourceMap: 'match-media-range.es5.js.map',
+	moduleName: 'matchMedia',
 	format: 'iife',
 	useStrict: false,
+	footer: 'window.matchMedia=matchMedia',
 	plugins: [
-		require('rollup-plugin-node-resolve')(),
-		require('rollup-plugin-commonjs')({
-			include: 'node_modules/**'
-		}),
 		require('rollup-plugin-babel')({
 			babelrc: false,
 			presets: [
@@ -21,10 +18,8 @@ export default {
 				]
 			]
 		}),
-		require('rollup-plugin-uglify')()
+		require('rollup-plugin-uglify')({
+			keep_fnames: true
+		})
 	]
 };
-
-
-
-
