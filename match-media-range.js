@@ -1,5 +1,5 @@
 // native match media
-const nativeMatchMedia = window.matchMedia;
+const nativeMatchMedia = typeof window !== 'undefined' && window.matchMedia;
 
 // match media polyfilled to support min-max
 export default function matchMedia(query) {
