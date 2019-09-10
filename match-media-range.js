@@ -3,6 +3,9 @@ const nativeMatchMedia = typeof window !== 'undefined' && window.matchMedia;
 
 // match media polyfilled to support min-max
 export default function matchMedia(query) {
+	if (!nativeMatchMedia) {
+		return null
+	}
 	return nativeMatchMedia(
 		String(query).replace(
 			/(?:([-+]?[0-9]*\.?[0-9]+)(%|\w+)\s*(<|>)(=)?(\s*))?(aspect-ratio|color|height|monochrome|resolution|width)(?:\s*(<|>)(=)?(\s*)([-+]?[0-9]*\.?[0-9]+)(%|\w+))?/g,
